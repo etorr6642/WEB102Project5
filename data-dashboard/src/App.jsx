@@ -1,33 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
+import RecipeInfo from './components/RecipeInfo'
+
+const API_KEY = import.meta.env.VITE_APP_API_KEY
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [list, setList] = useState([])
+
+  useEffect(()=>{
+    fetchAllRecipeData().catch(console.error);
+    
+
+  },[])
+
+  const fetchAllRecipeData =async()=>{
+    const response = await fetch(
+      "https://api.spoonacular.com/recipes/findByNutrients?maxCalories=1000&number=10&apiKey="+API_KEY
+    )
+    const json= await response.json();
+    setList(json ||[]);
+    console.log(json)
+    
+  }
+
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+       <div className='whole-page'>
+      <h1>Low Calorie Recipe List</h1>
+      <ul>
+        {list
+        .map((recipe) => (
+          <RecipeInfo id={recipe.id} title ={recipe.title} image ={recipe.image} calories ={recipe.calories}/>
+        ))}
+      </ul>
+    </div>
     </>
   )
 }
