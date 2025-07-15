@@ -40,20 +40,20 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+https://i.imgur.com/K4u5SIZ.gif
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with ScreenToGif  
+
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+For this project, I ran into issues with the API limits for the Spoonacular API. I reached the limit quickly because I didn't understand the point system they use for each API call. Some are 3 points, while others are 1 point or 0.1 points. Their daily max is 150 points, which I reached quickly. Once the daily max had reset, I was able to adjust the number of calls to continue with formatting. 
+
+I also had issues with understanding why another API call was needed in RecipeInfo.jsx. After reviewing the lab, I realized that we are obtaining extra information that the original API call did not have, so that we can include it in our information display.
+ 
 
 ## License
 
