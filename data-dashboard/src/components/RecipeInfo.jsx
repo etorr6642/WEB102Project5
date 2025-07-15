@@ -19,7 +19,11 @@ const RecipeInfo=({id, title, image, calories })=>{
     return(
 
         <li className="recipe-card">
-            <img src={image} alt={title} width="100" />
+            <div className='image-container'>
+                <img className='icons' src={image} alt={title} width="100" />
+            </div>
+            
+            <div className="details-container">
             <h3>{title}</h3>
             <p>Calories: {calories}</p>
 
@@ -30,6 +34,7 @@ const RecipeInfo=({id, title, image, calories })=>{
                 <a href={details.sourceUrl} target="_blank">Full Recipe</a>
                 </>
             )}
+            </div>
         </li>
 
 
