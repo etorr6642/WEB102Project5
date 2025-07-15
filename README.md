@@ -1,10 +1,10 @@
-# Web Development Project 5 - *Name of App Here*
+# Web Development Project 5 - *Low Calorie Recipe List*
 
-Submitted by: **Your Name Here**
+Submitted by: **Edward Torres**
 
-This web app: **insert description**
+This web app: This app will display 10 low calorie recipes with links to the full recipe. Each recipe will display a pictures, calories, prep time, and serving size. The user can search by title or show recipes by calorie range. The top of the page will show the number of recipes displayed as well as the average calories and the max calories in the list.
 
-Time spent: **X** hours spent in total
+Time spent: **7** hours spent in total
 
 ## Required Features
 
